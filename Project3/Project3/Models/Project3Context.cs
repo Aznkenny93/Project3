@@ -10,14 +10,13 @@ namespace Project3.Models
     public class Project3Context : DbContext
     {
         public Project3Context() : base("Project3") { }
-        public DbSet<User> User { get; set; }
+        public DbSet<Tram> Tram { get; set; }
+        public DbSet<Bus> Bus { get; set; }
+        public DbSet<Metro> Metro { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Entity<User>()
-            .Property(u => u.Name)
-            .HasColumnName("name");
 
         }
     }

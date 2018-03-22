@@ -152,8 +152,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bus.cs" />
+    <Compile Include="Models\Metro.cs" />
     <Compile Include="Models\Project3Context.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Tram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
