@@ -1,79 +1,95 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-                <title>Park evenement</title>
-                <link rel="stylesheet" type="text/css" href="style.css">
-        </head>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Parkevent | Evenem</title>
+            <link 
+                rel="stylesheet" 
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+                crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="style.css">
+            </link>
+</head>
 
-        <div id="map" 
-        style="width:50%; 
-        height: 900px;
-        padding-right: 10px; 
-        margin-top: 20px; 
-        float:right;"></div>
+<body>
 
-    <body bgcolor="F4F4F4">
-        <a href="file:///C:/Users/ALEX_LAPTOP/OneDrive/Documenten/SCHOOL/PROJECT%203/homepage.html?x=114&y=156"><img width="400" height="80" alt="Logo"
-        src="parkevent_logo.png"></a>
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 d-inline">
+            <div class="col-lg-6 col-md-6 col-sm-12" style="display: inline-block;">
+                <a href="file:///C:/Users/ALEX_LAPTOP/OneDrive/Documenten/SCHOOL/PROJECT%203/homepage.html?x=114&y=156"><img width="100%" height="100%" alt="Logo"
+                src="parkevent_logo.png"></a>
 
-        <br>
+                <img  style="width: 100%; height: 100%; margin:15px;" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/03/15/ok-hand.jpg">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 d-inline" style="float: right; text-align: center;">
+                <h1 style="width:auto; 
+                height: 100%; 
+                font-family: Verdana; 
+                font-size: 25px; 
+                position: relative; 
+                top: 110px; 
+                padding: 0px 0px 30px 0px;
+                vertical-align: middle;">Titel_evenement</h1>
 
-        
-        <img  style="width: 370px; height: 250px; margin:15px; float:left;" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/03/15/ok-hand.jpg">
-    
-        <h1 style="margin-left: 500px; margin-top: 50px;">Titel evenement</h1>
-
-        <img style="width: 400px;
-        margin-left: 55px;
-        margin-top: 30px; 
-        border-style: solid; 
-        border-width: 3px; 
-        border-color:#4133bd; 
-        border-radius: 25px;" src="plan_reis_knop.png">
-
-        <h2 style="margin-top: 80px;
-        font-family: Verdana; 
-        font-size: 25;">
-        Over dit evenement:</h2>
-    
-
-        <div id="omschrijving";
-            style="width: 45%;
-            height: 450px;
-            border-style:solid;
-            border-width: 3px;
-            border-radius: 10px;
-            border-color:#4133bd;
-            padding: 5px;
-            word-wrap: break-word;
-            background: #ffffff;">
+                <img style="width: 75%;
+                position: relative;
+                top: 110px;
+                border-style: solid; 
+                border-width: 3px; 
+                border-color:#4133bd; 
+                border-radius: 25px;
+                vertical-align: middle;" src="plan_reis_knop.png">
+            </div>
+            <div>
+                    <div id="omschrijving"
+                    style="width: 100%;
+                    height: 450px;
+                    border-style:solid;
+                    border-width: 3px;
+                    border-radius: 10px;
+                    border-color:#4133bd;
+                    padding: 5px;
+                    word-wrap: break-word;
+                    background: #ffffff;
+                    ">
+                         
+                    <p style="font-family: Verdana;"> Hierin komt standaard tekst te staan over het evenement. reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                    </p>
             
-           
-            <p style="font-family: Comic Sans MS;"> Hierin komt standaard tekst te staan over het evenement. reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-                eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-                eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-            </p>
-
+                    </div>
+                </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 d-inline" style="float: right;">
+            <div id="map" 
+            style="width:100%; 
+            height: 900px;
+            padding-right: 10px; 
+            margin-top: 20px;">
+            </div>
         </div>
 
-    </body>
+    </div>
 
-    <script>
-        function initMap() {
-            var uluru = { lat: 51.9173974, lng: 4.4817288 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
-                center: uluru
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
-    </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdfq1uS9vUK5O-eTSgbZnAfFgq8VGG1-I&callback=initMap">
-    </script>
+</body>
+
+<script>
+    function initMap() {
+        var uluru = { lat: 51.9173974, lng: 4.4817288 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdfq1uS9vUK5O-eTSgbZnAfFgq8VGG1-I&callback=initMap">
+</script>
 
 </html>
