@@ -13,8 +13,8 @@ namespace Project3.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public string ParkingKey { get; set; }
-        public string Lat { get; set; }
-        public string Long { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
         public string ParkingName { get; set; }
         public string ParkingCode { get; set; }
         public string ParkingType { get; set; }

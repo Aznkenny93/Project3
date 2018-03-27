@@ -11,6 +11,7 @@ namespace Project3.Controllers
     {
         public ActionResult Index()
         {
+            _db.Bus.ToList();
             return View();
         }
 
