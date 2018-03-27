@@ -13,6 +13,7 @@ namespace Project3.Models
         public DbSet<Tram> Tram { get; set; }
         public DbSet<Bus> Bus { get; set; }
         public DbSet<Metro> Metro { get; set; }
+        public DbSet<Parking> Parking { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -11,11 +11,11 @@ namespace Project3.Models
         [Key]
         [Column(Order = 1)]
         public int RitNumber { get; set; }
-        public int MetroNumber  { get; set; }
+        public string MetroNumber  { get; set; }
         [Key]
         [Column(Order = 2)]
-        public string Tramtime { get; set; }
-        public string Tramlocation { get; set; }
-        public string TramAdress { get; set; }
+        public string Metrotime { get; set; }
+        public string Metrolocation { get; set; }
+        public string MetroAdress { get; set; }
     }
 }
