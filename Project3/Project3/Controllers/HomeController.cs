@@ -11,19 +11,12 @@ namespace Project3.Controllers
     {
         public ActionResult Index()
         {
-            //_db.Bus.Add(new Bus()
-            //{
-            //    RitNumber = 3,
-            //    Bustime = "075400"
-            //});
-            //_db.SaveChanges();
-            //_db.Bus.ToList();
             return View();
         }
 
-        public ActionResult GetEvent(int id)
+        public ActionResult GetEvent(string id)
         {
-            int m = id;
+            ViewBag.id = id;
             return View();
         }
         
