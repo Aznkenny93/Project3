@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "GetEvent";
+}
+
+<div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 d-inline">
+        <div class="col-lg-6 col-md-6 col-sm-12" style="display: inline-block;">
+                <img width="100%" height="100%" alt="Logo"
+                     src="~/Content/parkevent_logo.png">
+
+            <img id ="eventImage" style="width: 375px; height:auto; margin:15px;" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/03/15/ok-hand.jpg">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 d-inline" style="float: right; text-align: center;">
+            <h1 id = "eventTitle" style="width:auto;
+                height: 100%;
+                font-family: Verdana;
+                font-size: 25px;
+                position: relative;
+                top: 110px;
+                padding: 0px 0px 30px 0px;
+                vertical-align: middle;">
+                Titel_evenement
+            </h1>
+
+            <img style="width: 75%;
+                position: relative;
+                top: 110px;
+                border-style: solid;
+                border-width: 3px;
+                border-color:#4133bd;
+                border-radius: 25px;
+                vertical-align: middle;" src="/Content/plan_reis_knop.png">
+        </div>
+        <div>
+            <div id="omschrijving"
+                 style="width: 100%;
+                    height: 450px;
+                    border-style:solid;
+                    border-width: 3px;
+                    border-radius: 10px;
+                    border-color:#4133bd;
+                    padding: 5px;
+                    word-wrap: break-word;
+                    background: #ffffff;
+                    font-family: Verdana;
+                    ">
+
+                <p>
+                    Hierin komt standaard tekst te staan over het evenement. reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 d-inline" style="float: right;">
+        <div id="map"
+             style="width:100%;
+            height: 900px;
+            padding-right: 10px;
+            margin-top: 20px;">
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+        var map;
+        function initMap() {
+            var uluru = { lat: 51.9173974, lng: 4.4817288 };
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: uluru
+            });
+        }
+
+        $(document).ready(function() {
+            $.ajax({
+                url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=hUIJ8WF0Wp2DAGetT7JUvhg5AetSfRR2&id=" + "@ViewBag.Id",
+                success: function (result) {
+                    //Event name
+                    $('#eventTitle').html(result['_embedded']['events'][0]['name'])
+                    //Event image
+                    $('#eventImage').attr('src', result['_embedded']['events'][0]['images'][0]['url'])
+
+                    //Long lat on google maps
+                    var long = result['_embedded']['events'][0]['_embedded']['venues'][0]['location']['longitude'];
+                    var lat = result['_embedded']['events'][0]['_embedded']['venues'][0]['location']['latitude'];
+                    var uluru = { lat: parseFloat(lat), lng: parseFloat(long) }
+                    map.setCenter(uluru);
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+
+                    // description
+                    $("#omschrijving").html(result['_embedded']['events'][0]['name'] + "<br /> Datum: " + result['_embedded']['events'][0]['dates']['start']['localDate'] + " " + result['_embedded']['events'][0]['dates']['start']['localTime'] + " <br /> <a href=\"" + result['_embedded']['events'][0]['url'] + "\"> Hoop hier uw tickets! </a>");
+                }
+            })
+        });
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdfq1uS9vUK5O-eTSgbZnAfFgq8VGG1-I&callback=initMap">
+    </script>
+    }
