@@ -79,10 +79,10 @@
 
         $(document).ready(function() {
             $.ajax({
-                url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=hUIJ8WF0Wp2DAGetT7JUvhg5AetSfRR2&id=" + "@ViewBag.Id",
+                url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=nl&apikey=KTmwKGyLJSOws2LFF9Al78erEjIRRF1u&id=" + "@ViewBag.Id",
                 success: function (result) {
                     //Event name
-                    $('#eventTitle').html(result['_embedded']['events'][0]['name'])
+                    $('#eventTitle').html(result['_embedded']['events'][0]['name']) 
                     //Event image
                     $('#eventImage').attr('src', result['_embedded']['events'][0]['images'][0]['url'])
 
@@ -97,7 +97,7 @@
                     });
 
                     // description
-                    $("#omschrijving").html(result['_embedded']['events'][0]['name'] + "<br /> Datum: " + result['_embedded']['events'][0]['dates']['start']['localDate'] + " " + result['_embedded']['events'][0]['dates']['start']['localTime'] + " <br /> <a href=\"" + result['_embedded']['events'][0]['url'] + "\"> Hoop hier uw tickets! </a>");
+                    $("#omschrijving").html(result['_embedded']['events'][0]['name'] + "<br /> Datum: " + result['_embedded']['events'][0]['dates']['start']['localDate'] + " " + result['_embedded']['events'][0]['dates']['start']['localTime'] + " <br /> <a href=\"" + result['_embedded']['events'][0]['url'] + "\"> Koop hier uw tickets! </a>");
                 }
             })
         });
