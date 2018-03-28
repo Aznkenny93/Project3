@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Parkevent</title>
+            <link 
+                rel="stylesheet" 
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+                crossorigin="anonymous">
+                <link rel="stylesheet" type="text/css" href="test.css">
+            </link>
+</head>
+
+<body background-color="F4F4F4">
+    
+    Auto <input type="radio" name="helicopter" id="myCheck"  onclick="myFunction()">
+    Openbaar vervoer <input type="radio" name="helicopter" id="myCheck2"  onclick="myFunction2()">
+
+    <br>
+
+    <div style="display:none">
+      Evenement <input type="radio" name="boi" id="regel2_auto" class="event2" >
+    </div>
+    <div style="display:none">
+      Parkeergarage <input type="radio" name="boi" id="regel2_parkeergarage" class="event2">
+    </div>
+
+
+    <div style="display:none">
+        <form action="/action_page.php" class="event3">
+          Postcode:<br>
+          <input type="text" name="Postcode" value="1234AB" class="event3" style="display: inline-block;"><br>
+          Huisnummer:<br>
+          <input type="text" name="Huisnummer" value="12" class="event3" style="display: inline-block;">
+        </form> 
+    </div>
+
+
+
+    <script>
+    function myFunction() {
+        var checkBox = document.getElementById("myCheck");
+
+        for (index = 0; index < $(".event2").length; index++) {
+          myfunction3($(".event2")[index], checkBox)
+          
+        }
+    }
+
+    myfunction3 = function(element,checkBox) {
+      console.log($(element));
+      if (checkBox.checked == true){
+          $(element)[0].parentElement.style.display = "inline-block";
+        } else {
+          $(element)[0].parentElement.style.display = "none";          
+        }
+    }
+
+    function myFunction2() {
+        var checkBox = document.getElementById("myCheck2");
+
+        for (index = 0; index < $(".event3").length; index++) {
+          myfunction3($(".event3")[index], checkBox)
+          
+        }
+    }
+
+
+    
+    </script>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</html>
