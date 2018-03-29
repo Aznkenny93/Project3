@@ -192,3 +192,57 @@ form {
 .img {
     max-width: 100%;
 }
+
+.row .row {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+[class*="col-"] {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #eee;
+    border: 1px solid #3131AC;
+}
+
+.col-sm-4 {
+    height: 600px;
+}
+
+.col-sm-8 {
+    height: 600px;
+}
+
+.form-group {
+    width: 40%;
+    display: inline-block;
+}
+
+#googleMap {
+    width: 100%;
+    height: 560px;
+}
+
+.auto_next {
+    display: none;
+}
+
+.ov_next {
+    display: none;
+}
+
+/*
+.Vraag_2 {
+	display:none;
+}
+*/
+
+input[type=text], select {
+    width: 50%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #901719;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
