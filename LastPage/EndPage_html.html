@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="EndPage_css.css">
+	<script src="EndPage_js.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+	  <h1>Project!</h1>
+	  <div class="row">
+		  
+		  <div class="col-sm-4">
+			  
+			  <div class = "Vragenlijst">
+				<h4>Met welk vervoersmiddel wilt u reizen?</h4>
+					<div class = "Vraag_1">
+						<label>Auto</label>
+						<input type="radio" name="question_1" id="Auto">
+
+						<label>OV</label>
+						<input type="radio" name="question_1" id="OV">
+				  </div><br>
+
+
+				<div class = "Vraag_2">
+					<div class="ov_next">
+						<h4>Voer uw gegevens in:</h4>
+						<form>
+							<div class="form-group">
+								<label for="usr">Postcode:</label><br>
+								<input type="text" class="form-control" id="post_code" placeholder="1234AB">
+							</div><br>
+
+							<div class="form-group">
+								<label for="pwd">Huisnummer:</label><br>
+								<input type="text" class="form-control" id="huis_nr"placeholder="1">
+							</div>
+						</form>
+						<button class="btn btn-default" onclick="myFunction()">Confirm</button>
+					</div>
+
+					<div class="auto_next">
+						<h4>Waar wilt u parkeren?</h4>
+						<form>
+							<label><input type="radio" name="yup"> Evenement</label>
+							<label><input type="radio" name="yup"> Parkeergarage</label>
+						</form>
+
+
+					</div>
+				  </div>
+
+			  </div>
+			  
+			  
+
+			 
+		  </div>
+		  
+		  <div class="col-sm-8">
+			  <div id="googleMap"></div>
+		  </div>
+
+
+	  </div>
+	</div>
+</body>
+	
+	
+<script>
+	function myMap() {
+		var mapProp= {
+			center:new google.maps.LatLng(51.924420,4.477733),
+			zoom:10,
+			draggable: false,
+		  	zoomControl: false,
+		  	scaleControl: false,
+		  	scrollwheel: false,
+		  	disableDoubleClickZoom: true
+		};
+
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+</script>
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSjtaS93EaAoM3iB9FSMcx-8ZqxcWSAw4&callback=myMap"></script>
+	
+</html>
