@@ -238,7 +238,7 @@ form {
 */
 
 input[type=text], select {
-    width: 50%;
+    width: 100%;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #901719;
