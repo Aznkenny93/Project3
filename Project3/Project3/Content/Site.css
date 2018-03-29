@@ -198,12 +198,12 @@ form {
     margin-bottom: 0;
 }
 
-[class*="col-"] {
+/*[class*="col-"] {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #eee;
     border: 1px solid #3131AC;
-}
+}*/
 
 .col-sm-4 {
     height: 600px;
