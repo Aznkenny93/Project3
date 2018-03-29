@@ -1,9 +1,11 @@
-﻿using Project3.Models;
+﻿using Newtonsoft.Json;
+using Project3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace Project3.Controllers
 {
@@ -23,7 +25,15 @@ namespace Project3.Controllers
         public ActionResult PlanReis(string id)
         {
             ViewBag.id = id;
-            ViewBag.Parking = _db.Parking.ToList();
+            List<Parking> parking = _db.Parking.ToList();
+
+            List<dynamic> parkingDynamic = new List<dynamic>();
+            foreach (var item in parking)
+            {
+                dynamic parkingspot = new { lat = item.Latitude, lng = item.Longitude };
+                parkingDynamic.Add(parkingspot);
+            }
+            ViewBag.ParkingList = JsonConvert.SerializeObject(parkingDynamic);
             return View();
         }
 
