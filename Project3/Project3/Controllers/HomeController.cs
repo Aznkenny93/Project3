@@ -11,7 +11,6 @@ namespace Project3.Controllers
     {
         public ActionResult Index()
         {
-            _db.Bus.ToList();
             return View();
         }
 
@@ -21,10 +20,10 @@ namespace Project3.Controllers
             return View();
         }
         
-        public ActionResult About()
+        public ActionResult PlanReis(string id)
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.id = id;
+            ViewBag.Parking = _db.Parking.ToList();
             return View();
         }
 
