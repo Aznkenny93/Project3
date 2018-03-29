@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+<div id="top">
+    <a href="/">
+        <img src="~/Content/parkevent_logo.png" />
+    </a>
+</div>
+
+<form>
+    <input type="text" name="search" placeholder="Search..">
+</form>
+<div class="allresults">
+
+    <div class="results" id="result1">
+        <h1>Dit is een redelijk lange titel omdat sommige eventnamen ook lang zijn.</h1>
+        <p>Lorem ipsum dolor sit amet, case invenire deseruisse in has, malorum officiis nec cu. Nam rebum novum officiis cu, sea ei facer etiam, adolescens scripserit his ne. No rebum quidam patrioque vel, ne vidit constituto vix, sumo movet ridens per ei.</p>
+    </div>
+    <div class="results" id="result2">
+        <h1>Dit is een redelijk lange titel omdat sommige eventnamen ook lang zijn.</h1>
+        <p>Lorem ipsum dolor sit amet, case invenire deseruisse in has, malorum officiis nec cu. Nam rebum novum officiis cu, sea ei facer etiam, adolescens scripserit his ne. No rebum quidam patrioque vel, ne vidit constituto vix, sumo movet ridens per ei.</p>
+    </div>
+    <div class="results" id="result3">
+        <h1>Dit is een redelijk lange titel omdat sommige eventnamen ook lang zijn.</h1>
+        <p>Lorem ipsum dolor sit amet, case invenire deseruisse in has, malorum officiis nec cu. Nam rebum novum officiis cu, sea ei facer etiam, adolescens scripserit his ne. No rebum quidam patrioque vel, ne vidit constituto vix, sumo movet ridens per ei.</p>
+    </div>
+    <div class="results" id="resultdefault" style="display:none;">
+        <h1>Dit is een redelijk lange titel omdat sommige eventnamen ook lang zijn.</h1>
+        <p>Lorem ipsum dolor sit amet, case invenire deseruisse in has, malorum officiis nec cu. Nam rebum novum officiis cu, sea ei facer etiam, adolescens scripserit his ne. No rebum quidam patrioque vel, ne vidit constituto vix, sumo movet ridens per ei.</p>
+    </div>
+</div>
+
+
+@section scripts {
+   <script>
+       $(document).ready(function () {
+           $('input[name="search"]').change(Loadresults);
+           $('form').submit(function (e) { return false;});
+           Loadresults();
+        });
+       var Loadresults = function () {
+           console.log($('input[name="search"]').val());
+            $.ajax({
+                url: "https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=hUIJ8WF0Wp2DAGetT7JUvhg5AetSfRR2&city=rotterdam&keyword=" + $('input[name="search"]').val(),
+                success: function (result) {
+                    if ('_embedded' in result && 'events' in result['_embedded']) {
+                        var events = result['_embedded']['events'];
+                        console.log(events)
+                        $(".allresults").html("");
+                        for (var i = 0; i < events.length; i++) {
+                            console.log(events[i]);
+                            var div = '<div class="results"><a href="/home/getevent/' + events[i]['id'] + '" <h1>' + events[i]["name"] + ' </h1> <p> Datum:' + events[i]['dates']['start']['localDate'] + ' </p> </div>'
+                            $(".allresults").append(div)
+                        }
+                    }
+                }
+            });
+        };   
+   </script>
+}

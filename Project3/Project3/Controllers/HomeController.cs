@@ -28,10 +28,8 @@ namespace Project3.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult SearchPage()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
