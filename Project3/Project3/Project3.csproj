@@ -170,6 +170,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\parkevent_logo.png" />
     <Content Include="Content\plan_reis_knop.png" />
+    <Content Include="Content\ticketskopen.png" />
+    <Content Include="Content\vergrootglas.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

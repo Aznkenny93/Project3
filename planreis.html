@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Parkevent | Plan reis</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <div id="map" 
+    style="width:50%; 
+    height: 900px;
+    padding-right: 10px; 
+    margin-top: 20px; 
+    float:right;"></div>
+
+    <body bgcolor="F4F4F4">
+        <a href="file:///C:/Users/ALEX_LAPTOP/OneDrive/Documenten/SCHOOL/PROJECT%203/homepage.html?x=114&y=156"><img width="400" height="80" alt="Logo"
+        src="parkevent_logo.png"></a>
+        
+        <br>
+
+        <img  style="width: 370px; height: 250px; margin:15px; float:left;" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/03/15/ok-hand.jpg">
+
+        <h1 style="margin-left: 500px; margin-top: 100px;">Titel evenement</h1>
+
+        <br>
+
+        <div id="Reisgegevens";
+        style="width: 45%;
+        height: 550px;
+        border-style:solid;
+        border-width: 3px;
+        border-radius: 10px;
+        border-color:#4133bd;
+        padding: 5px;
+        margin-top: 120px;
+        word-wrap: break-word;
+        background: #ffffff;">
+
+        <form>
+            <div>
+              <label for="reismethode"><h2>Vervoersmiddel</h2></label>
+              Auto <input type="checkbox" id="reismethode" name="auto">
+              Openbaar vervoer <input type="checkbox" id="reismethode" name="ov">
+            </div>
+          </form>
+
+        </div>
+
+    </body>
+
+    <script>
+        function initMap() {
+            var uluru = { lat: 51.9173974, lng: 4.4817288 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdfq1uS9vUK5O-eTSgbZnAfFgq8VGG1-I&callback=initMap">
+    </script>
+    
+</html>
