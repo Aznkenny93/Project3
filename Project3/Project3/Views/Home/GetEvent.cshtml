@@ -104,8 +104,12 @@
                         map: map
                     });
 
+
+                    console.log(result['_embedded']['events'][0])
                     // description
-                    $("#omschrijving").html(result['_embedded']['events'][0]['name'] + "<br /> Datum: " + result['_embedded']['events'][0]['dates']['start']['localDate'] + " " + result['_embedded']['events'][0]['dates']['start']['localTime'] + " <br /> <a href=\"" + result['_embedded']['events'][0]['url'] + "\"> <img style=\"border: outset; border-width: 5px; border-color: rgba(6, 4, 45, 0.65); background-color:  rgba(6, 4, 45, 0.45); border-radius: 5px;\"src=\"/content/ticketskopen.png\" /> </a>");
+                    $("#omschrijving").html(result['_embedded']['events'][0]['name'] + "<br /> Datum: " + result['_embedded']['events'][0]['dates']['start']['localDate'] + " " + result['_embedded']['events'][0]['dates']['start']['localTime'] + " <br /> Locatie: " +
+                        result['_embedded']['events'][0]["_embedded"]['venues'][0]["address"]["line1"] + " " + result['_embedded']['events'][0]["_embedded"]['venues'][0]["city"]["name"]
+                        + " <br /> <a href=\"" + result['_embedded']['events'][0]['url'] + "\"> <img style=\"border: outset; border-width: 5px; border-color: rgba(6, 4, 45, 0.65); background-color:  rgba(6, 4, 45, 0.45); border-radius: 5px;\"src=\"/content/ticketskopen.png\" /> </a>");
                 }
             })
         });
