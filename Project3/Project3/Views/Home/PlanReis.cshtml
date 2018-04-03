@@ -102,6 +102,7 @@
         $("#OV").on("click", function () {
             if ($(this).is(":checked")) {
                 $(".auto_next").css({ "display": "none" })
+                $("#vraag3").css({ "display": "none" })
                 $(".ov_next").fadeIn()
             }
         });
@@ -120,6 +121,9 @@
                 $(".ov_next").css({ "display": "none" })
                 //$(".auto_next").css({"display": "block"})
                 $(".auto_next").fadeIn()
+                if ($("#event").is(":checked")) {
+                    $("#vraag3").fadeIn();
+                }
                 //$(".Vraag_2").css({"display": "block"})
                 //$(".Vraag_2").fadeIn()
             }
